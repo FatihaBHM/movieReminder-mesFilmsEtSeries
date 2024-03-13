@@ -5,32 +5,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.lafabrique_epita.domain.valueObjects.CreationVO;
-import org.lafabrique_epita.domain.valueObjects.IdentityVO;
-
-import java.util.List;
+import org.lafabrique_epita.domain.valueObjects.EvaluationDetailsVO;
+import org.springframework.http.HttpStatus;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Director {
+public class SerieEvaluation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Embedded
-    private IdentityVO identity;
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "director_media",
-            joinColumns = @JoinColumn(name = "director_id"),
-            inverseJoinColumns = @JoinColumn(name = "media_id"))
-    private List<Media> media;
+    private EvaluationDetailsVO evaluationDetails;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Serie series;
 
     @Embedded
     private CreationVO CreationDetails;
-
 }

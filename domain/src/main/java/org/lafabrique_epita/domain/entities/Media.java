@@ -21,6 +21,7 @@ public class Media {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Embedded
     private MediaDetailsVO details;
 
     @Column(name = "age_category", nullable = true, length = 20)
@@ -72,6 +73,7 @@ public class Media {
     @ManyToMany(mappedBy = "mediaFavorites")
     private List<User> favoriteForUsers;
 
+    @Embedded
     private CreationVO CreationDetails;
 
 

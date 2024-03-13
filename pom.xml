@@ -26,7 +26,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <postgres.port>5432</postgres.port>
+        <postgres.port>5434</postgres.port>
         <docker-maven.version>0.43.0</docker-maven.version>
     </properties>
 

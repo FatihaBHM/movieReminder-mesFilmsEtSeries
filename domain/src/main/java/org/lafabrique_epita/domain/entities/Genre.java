@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.lafabrique_epita.domain.valueObjects.CreationVO;
-import org.lafabrique_epita.domain.valueObjects.IdentityVO;
 
 import java.util.List;
 
@@ -13,24 +12,21 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Director {
+public class Genre {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Embedded
-    private IdentityVO identity;
+    @Column(name = "name", nullable = false)
+    protected String name;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "director_media",
-            joinColumns = @JoinColumn(name = "director_id"),
-            inverseJoinColumns = @JoinColumn(name = "media_id"))
+    @ManyToMany(mappedBy = "genres")
     private List<Media> media;
 
     @Embedded
     private CreationVO CreationDetails;
+
 
 }

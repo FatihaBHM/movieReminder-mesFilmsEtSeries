@@ -20,6 +20,7 @@ public class Actor {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Embedded
     private IdentityVO identity;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -29,6 +30,7 @@ public class Actor {
             inverseJoinColumns = @JoinColumn(name = "media_id"))
     private List<Media> media;
 
+    @Embedded
     private CreationVO CreationDetails;
 
 }

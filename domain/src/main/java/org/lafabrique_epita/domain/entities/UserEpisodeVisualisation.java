@@ -4,33 +4,30 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.lafabrique_epita.domain.enums.StatusEnum;
 import org.lafabrique_epita.domain.valueObjects.CreationVO;
-import org.lafabrique_epita.domain.valueObjects.IdentityVO;
-
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Director {
+public class UserEpisodeVisualisation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Embedded
-    private IdentityVO identity;
+    @ManyToOne
+    private User user;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "director_media",
-            joinColumns = @JoinColumn(name = "director_id"),
-            inverseJoinColumns = @JoinColumn(name = "media_id"))
-    private List<Media> media;
+    @ManyToOne
+    private Movie movie;
+
+    @Column(name = "status",  length = 20)
+    @Enumerated(EnumType.STRING)
+    private StatusEnum statusEnum;
 
     @Embedded
     private CreationVO CreationDetails;
-
 }

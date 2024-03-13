@@ -5,15 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.lafabrique_epita.domain.valueObjects.CreationVO;
-import org.lafabrique_epita.domain.valueObjects.IdentityVO;
-
-import java.util.List;
+import org.lafabrique_epita.domain.valueObjects.EvaluationDetailsVO;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Director {
+public class SeasonEvaluation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +19,13 @@ public class Director {
     private Long id;
 
     @Embedded
-    private IdentityVO identity;
+    private EvaluationDetailsVO evaluationDetails;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "director_media",
-            joinColumns = @JoinColumn(name = "director_id"),
-            inverseJoinColumns = @JoinColumn(name = "media_id"))
-    private List<Media> media;
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private Season season;
 
     @Embedded
     private CreationVO CreationDetails;
