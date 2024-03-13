@@ -6,45 +6,25 @@
         <groupId>org.lafabrique_epita</groupId>
         <artifactId>movieReminder</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.lafabrique_epita</groupId>
+
     <artifactId>domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>domain</name>
     <description>domain</description>
     <packaging>jar</packaging>
-    <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-
-
-
-
-    </dependencies>
+    <dependencies></dependencies>
 
     <build>
-        <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <mainClass>org.lafabrique_epita.exposition.ExpositionApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
-        </pluginManagement>
     </build>
 
 </project>
