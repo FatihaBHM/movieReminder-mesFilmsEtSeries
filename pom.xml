@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>org.lafabrique_epita</groupId>
-    <artifactId>movieReminder-mesFilmsEtSeries</artifactId>
+    <artifactId>movieReminder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>movieReminder-mesFilmsEtSeries</name>
-    <description>movieReminder-mesFilmsEtSeries</description>
+    <name>movieReminder</name>
+    <description>movieReminder</description>
 
     <packaging>pom</packaging>
 
