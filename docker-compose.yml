@@ -16,9 +16,9 @@ services:
     volumes:
       - data:/var/lib/postgresql/data
 
-  movieReminders:
-    image: movie-reminders
-    container_name: movie-reminders
+  movieReminder:
+    image: movie-reminder
+    container_name: movie-reminder
     build:
       context: .
       dockerfile: Dockerfile
