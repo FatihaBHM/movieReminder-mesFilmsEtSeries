@@ -1,0 +1,38 @@
+package org.lafabrique_epita.domain.entities;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Season {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private LocalDate airDate;
+
+    private String overview;
+
+    private int idTmdb;
+
+    private String poster_path;
+
+    private int seasonNumber;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "serie_id")
+    private Serie serie;
+
+    @ManyToMany
+    @JoinTable(name = "season_comments", joinColumns = @JoinColumn(name = "season_id"), inverseJoinColumns = @JoinColumn(name = "comment_id"))
+    private List<Comment> comments;
+}
