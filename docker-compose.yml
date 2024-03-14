@@ -2,6 +2,7 @@ version: "3.9"
 services:
   database:
     image: postgres
+    container_name: movie-database
     restart: always
     ports:
       - "5432:5432"
@@ -15,9 +16,24 @@ services:
     volumes:
       - data:/var/lib/postgresql/data
 
+  movieReminder:
+    image: movie-reminder
+    container_name: movie-reminder
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - movieNetwork
 networks:
   movieNetwork:
-
 
 volumes:
   data:
