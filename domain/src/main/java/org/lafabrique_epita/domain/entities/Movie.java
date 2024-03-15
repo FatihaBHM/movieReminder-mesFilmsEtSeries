@@ -20,8 +20,10 @@ public class Movie {
 
     private String backdropPath;
 
+    @Column(nullable = false)
     private Long idTmdb;
 
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String overview;
 
     private float score;
@@ -30,6 +32,7 @@ public class Movie {
 
     private int duration;
 
+    @Column(nullable = false)
     private String title;
 
     @OneToMany

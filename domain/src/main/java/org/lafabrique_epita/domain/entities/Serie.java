@@ -20,16 +20,17 @@ public class Serie {
 
     private LocalDate firstAirDate;
 
+    @Column(nullable = false)
     private Long idTmdb;
 
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String overview;
 
     private String posterPath;
 
-    private int seasonNumber;
-
     private LocalDate lastAirDate;
 
+    @Column(nullable = false)
     private String title;
 
     private int numberOfEpisodes;

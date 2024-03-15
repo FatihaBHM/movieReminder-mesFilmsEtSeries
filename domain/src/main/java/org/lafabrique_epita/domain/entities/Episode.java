@@ -22,10 +22,13 @@ public class Episode {
 
     private int episodeNumber;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String overview;
 
+    @Column(nullable = false)
     private Long idTmdb;
 
     private int duration;

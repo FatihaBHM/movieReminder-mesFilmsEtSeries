@@ -20,8 +20,10 @@ public class Season {
 
     private LocalDate airDate;
 
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String overview;
 
+    @Column(nullable = false)
     private int idTmdb;
 
     private String poster_path;
