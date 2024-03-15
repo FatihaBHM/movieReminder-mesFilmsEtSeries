@@ -29,7 +29,8 @@ public class Favorite {
     @JoinColumn(name = "user_id")
     private User user;
 
-
+    @Embedded
+    private Commons commons;
 
 
 

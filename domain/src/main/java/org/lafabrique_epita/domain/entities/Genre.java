@@ -18,7 +18,9 @@ public class Genre {
     @Column(nullable = false)
     private Long idTmdb;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String name;
 
+    @Embedded
+    private Commons commons;
 }

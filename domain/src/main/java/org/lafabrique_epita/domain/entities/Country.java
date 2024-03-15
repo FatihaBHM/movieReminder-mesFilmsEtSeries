@@ -17,4 +17,7 @@ public class Country {
 
     @Column(nullable = false)
     private String name;
+
+    @Embedded
+    private Commons commons;
 }

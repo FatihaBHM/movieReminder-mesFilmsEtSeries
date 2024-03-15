@@ -58,4 +58,7 @@ public class Serie {
     @ManyToMany
     @JoinTable(name = "serie_countries", joinColumns = @JoinColumn(name = "serie_id"), inverseJoinColumns = @JoinColumn(name = "country_id"))
     private List<Country> countries;
+
+    @Embedded
+    private Commons commons;
 }

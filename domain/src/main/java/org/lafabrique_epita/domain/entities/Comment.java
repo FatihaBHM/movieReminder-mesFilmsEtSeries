@@ -19,4 +19,7 @@ public class Comment {
     private String description;
 
     private float score;
+
+    @Embedded
+    private Commons commons;
 }

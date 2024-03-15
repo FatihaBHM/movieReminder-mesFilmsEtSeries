@@ -58,4 +58,7 @@ public class Movie {
     @ManyToMany
     @JoinTable(name = "movie_countries", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "country_id"))
     private List<Country> countries;
+
+    @Embedded
+    private Commons commons;
 }

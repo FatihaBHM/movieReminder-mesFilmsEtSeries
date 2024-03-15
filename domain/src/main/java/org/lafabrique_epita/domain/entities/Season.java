@@ -37,4 +37,7 @@ public class Season {
     @ManyToMany
     @JoinTable(name = "season_comments", joinColumns = @JoinColumn(name = "season_id"), inverseJoinColumns = @JoinColumn(name = "comment_id"))
     private List<Comment> comments;
+
+    @Embedded
+    private Commons commons;
 }

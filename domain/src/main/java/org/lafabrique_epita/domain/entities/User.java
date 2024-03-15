@@ -21,10 +21,13 @@ public class User {
 
     private String pseudo;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
 
@@ -39,5 +42,8 @@ public class User {
     @OneToMany
     @JoinColumn(name = "favorite_id")
     private List<Favorite> favorites;
+
+    @Embedded
+    private Commons commons;
 
 }

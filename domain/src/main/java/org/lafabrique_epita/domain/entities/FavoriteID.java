@@ -10,4 +10,5 @@ public class FavoriteID implements Serializable {
     private Long userId;
     private Long movieId;
     private Long serieId;
+
 }

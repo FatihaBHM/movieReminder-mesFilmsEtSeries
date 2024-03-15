@@ -27,6 +27,10 @@ public class PlayListMovie {
 
     private float score;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusEnum status;
+
+    @Embedded
+    private Commons commons;
 }

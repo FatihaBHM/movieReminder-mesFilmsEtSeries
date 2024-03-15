@@ -27,6 +27,10 @@ public class PlayListTv {
 
     private int Score;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusEnum status;
+
+    @Embedded
+    private Commons commons;
 }

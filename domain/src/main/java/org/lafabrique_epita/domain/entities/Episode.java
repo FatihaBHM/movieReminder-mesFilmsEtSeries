@@ -48,4 +48,7 @@ public class Episode {
     @ManyToMany
     @JoinTable(name = "episode_comments", joinColumns = @JoinColumn(name = "episode_id"), inverseJoinColumns = @JoinColumn(name = "comment_id"))
     private List<Comment> comments;
+
+    @Embedded
+    private Commons commons;
 }
