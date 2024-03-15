@@ -17,17 +17,15 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>domain</module>
-        <module>application</module>
-        <module>infrastructure</module>
         <module>exposition</module>
+        <module>application</module>
+        <module>domain</module>
+        <module>infrastructure</module>
     </modules>
 
     <properties>
         <version>0.0.1-SNAPSHOT</version>
         <java.version>21</java.version>
-        <postgres.port>5434</postgres.port>
-        <docker-maven.version>0.43.0</docker-maven.version>
     </properties>
 
     <dependencies>
@@ -39,10 +37,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -68,11 +62,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.security</groupId>-->
-<!--            <artifactId>spring-security-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -81,7 +74,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.lafabrique_epita.exposition.ExpositionApplication</mainClass>
+                    <mainClass>org.lafabrique_epita.ExpositionApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
