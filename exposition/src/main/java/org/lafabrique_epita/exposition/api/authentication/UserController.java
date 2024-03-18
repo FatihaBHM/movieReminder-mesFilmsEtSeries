@@ -1,6 +1,7 @@
 package org.lafabrique_epita.exposition.api.authentication;
 
-import org.lafabrique_epita.domain.entities.User;
+import org.lafabrique_epita.application.service.UserService;
+import org.lafabrique_epita.domain.entities.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +14,7 @@ public class UserController {
 
 
     @PostMapping("/save")
-    public void save(User user) {
-        userService.save(new User());
+    public void save(UserEntity user) {
+        userService.save("", "");
     }
 }
