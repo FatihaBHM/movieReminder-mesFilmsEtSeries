@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @EntityListeners(AuditingEntityListener.class)
 @Embeddable
-public class Commons {
+public class CommonEntity {
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

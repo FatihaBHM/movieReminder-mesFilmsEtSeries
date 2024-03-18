@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Serie {
+public class SerieEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,24 +41,24 @@ public class Serie {
 
     @OneToMany
     @JoinColumn(name = "favorite_id")
-    private List<Favorite> favorites;
+    private List<FavoriteEntity> favorites;
 
     @ManyToMany
     @JoinTable(name = "serie_comments", joinColumns = @JoinColumn(name = "serie_id"), inverseJoinColumns = @JoinColumn(name = "comment_id"))
-    private List<Comment> comments;
+    private List<CommentEntity> comments;
 
     @ManyToMany
     @JoinTable(name = "serie_genres", joinColumns = @JoinColumn(name = "serie_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
-    private List<Genre> genres;
+    private List<GenreEntity> genres;
 
     @ManyToMany
     @JoinTable(name = "serie_languages", joinColumns = @JoinColumn(name = "serie_id"), inverseJoinColumns = @JoinColumn(name = "language_id"))
-    private List<Language> languages;
+    private List<LanguageEntity> languages;
 
     @ManyToMany
     @JoinTable(name = "serie_countries", joinColumns = @JoinColumn(name = "serie_id"), inverseJoinColumns = @JoinColumn(name = "country_id"))
-    private List<Country> countries;
+    private List<CountryEntity> countries;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 }

@@ -1,11 +1,8 @@
-package org.lafabrique_epita.infrastructure.security;
+package org.lafabrique_epita.infrastructure.user;
 
-
-import jakarta.transaction.Transactional;
-import org.lafabrique_epita.domain.entities.User;
+import org.lafabrique_epita.domain.entities.UserEntity;
 import org.lafabrique_epita.domain.repositories.UserRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
@@ -18,7 +15,7 @@ public class UserRepositoryAdapter implements UserRepository {
     }
 
     @Override
-    public Optional<User> findByEmail(String email) {
+    public Optional<UserEntity> findByEmail(String email) {
         return userJpaRepository.findByEmail(email);
     }
 }

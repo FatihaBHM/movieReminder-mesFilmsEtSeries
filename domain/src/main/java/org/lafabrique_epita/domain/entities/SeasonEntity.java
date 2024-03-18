@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Season {
+public class SeasonEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,12 +32,12 @@ public class Season {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "serie_id")
-    private Serie serie;
+    private SerieEntity serie;
 
     @ManyToMany
     @JoinTable(name = "season_comments", joinColumns = @JoinColumn(name = "season_id"), inverseJoinColumns = @JoinColumn(name = "comment_id"))
-    private List<Comment> comments;
+    private List<CommentEntity> comments;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 }

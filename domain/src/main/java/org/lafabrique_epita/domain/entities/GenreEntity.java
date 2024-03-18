@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Genre {
+public class GenreEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +22,5 @@ public class Genre {
     private String name;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 }

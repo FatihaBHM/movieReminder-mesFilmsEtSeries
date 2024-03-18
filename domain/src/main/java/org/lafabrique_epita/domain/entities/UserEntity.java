@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "utilisateur")
-public class User implements UserDetails {
+public class UserEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,18 +37,18 @@ public class User implements UserDetails {
 
     @OneToMany
     @JoinColumn(name = "playlist_tv_id")
-    private List<PlayListTv> playListTvs;
+    private List<PlayListTvEntity> playListTvs;
 
     @OneToMany
     @JoinColumn(name="playlist_movie_id")
-    private List<PlayListMovie> playListMovies;
+    private List<PlayListMovieEntity> playListMovies;
 
     @OneToMany
     @JoinColumn(name = "favorite_id")
-    private List<Favorite> favorites;
+    private List<FavoriteEntity> favorites;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 
 
     // ↓ Configuration de Spring Security (UserDetails) ↓

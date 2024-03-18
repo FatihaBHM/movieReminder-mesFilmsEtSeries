@@ -10,27 +10,27 @@ import org.lafabrique_epita.domain.enums.StatusEnum;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class PlayListMovie {
+public class PlayListTvEntity {
 
     @EmbeddedId
-    private PlayListMovieID id;
+    private PlayListTvID id;
 
     @ManyToOne(optional = false)
-    @MapsId("movieId")
-    @JoinColumn(name = "movie_id")
-    private Movie movie;
+    @MapsId("tvId")
+    @JoinColumn(name = "episode_id")
+    private EpisodeEntity episode;
 
     @ManyToOne(optional = false)
     @MapsId("userId")
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity user;
 
-    private float score;
+    private int Score;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 }

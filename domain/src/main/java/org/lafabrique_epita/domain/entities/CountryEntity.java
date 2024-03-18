@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Country {
+public class CountryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +19,5 @@ public class Country {
     private String name;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 }

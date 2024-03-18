@@ -1,9 +1,9 @@
 package org.lafabrique_epita.domain.repositories;
 
-import org.lafabrique_epita.domain.entities.User;
+import org.lafabrique_epita.domain.entities.UserEntity;
 
 import java.util.Optional;
 
 public interface UserRepository {
-    Optional<User> findByEmail(String email);
+    Optional<UserEntity> findByEmail(String email);
 }

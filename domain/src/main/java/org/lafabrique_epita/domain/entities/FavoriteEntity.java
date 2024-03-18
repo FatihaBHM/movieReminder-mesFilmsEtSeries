@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Favorite {
+public class FavoriteEntity {
 
     @EmbeddedId
     private FavoriteID id;
@@ -17,20 +17,20 @@ public class Favorite {
     @ManyToOne(optional = true)
     @MapsId("movieId")
     @JoinColumn(name = "movie_id")
-    private Movie movie;
+    private MovieEntity movie;
 
     @ManyToOne(optional = true)
     @MapsId("serieId")
     @JoinColumn(name = "serie_id")
-    private Serie serie;
+    private SerieEntity serie;
 
     @ManyToOne(optional = false)
     @MapsId("userId")
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity user;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
 
 
 

@@ -9,17 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Comment {
+public class LanguageEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String description;
-
-    private float score;
+    @Column(nullable = false, length = 20)
+    private String name;
 
     @Embedded
-    private Commons commons;
+    private CommonEntity commons;
+
 }
