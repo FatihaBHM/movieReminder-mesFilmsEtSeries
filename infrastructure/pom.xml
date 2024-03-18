@@ -28,7 +28,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.lafabrique_epita.exposition.ExpositionApplication</mainClass>
+                    <mainClass>org.lafabrique_epita.ExpositionApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

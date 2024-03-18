@@ -1,11 +1,12 @@
-package org.lafabrique_epita.exposition;
+package org.lafabrique_epita;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-@EntityScan(basePackages = "org.lafabrique_epita.Domain")
+@EnableJpaAuditing
 public class ExpositionApplication {
 
     public static void main(String[] args) {

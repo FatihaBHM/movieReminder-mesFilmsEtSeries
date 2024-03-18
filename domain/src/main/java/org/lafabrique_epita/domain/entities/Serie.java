@@ -28,6 +28,12 @@ public class Serie {
 
     private String posterPath;
 
+   // @Column(nullable = true)
+    //private String image_landscape;
+
+    //@Column(nullable = true)
+   // private String image_portrait;
+
     private LocalDate lastAirDate;
 
     @Column(nullable = false)
