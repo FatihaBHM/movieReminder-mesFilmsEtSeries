@@ -22,19 +22,4 @@
         </dependency>
     </dependencies>
 
-<<<<<<< HEAD
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>org.lafabrique_epita.ExpositionApplication</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-=======
->>>>>>> 7ba9e2b9c78a01dfea8cf5ebd393d67a493037a7
 </project>

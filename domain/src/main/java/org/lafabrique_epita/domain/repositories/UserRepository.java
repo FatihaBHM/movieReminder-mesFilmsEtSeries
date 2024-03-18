@@ -6,4 +6,6 @@ import java.util.Optional;
 
 public interface UserRepository {
     Optional<UserEntity> findByEmail(String email);
+
+    Long save(UserEntity user);
 }

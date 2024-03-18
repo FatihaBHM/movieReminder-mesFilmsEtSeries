@@ -67,5 +67,5 @@ public class MovieEntity {
     private List<CountryEntity> countries;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

@@ -18,4 +18,10 @@ public class UserRepositoryAdapter implements UserRepository {
     public Optional<UserEntity> findByEmail(String email) {
         return userJpaRepository.findByEmail(email);
     }
+
+    @Override
+    public Long save(UserEntity user) {
+        return userJpaRepository.save(user).getId();
+    }
+
 }

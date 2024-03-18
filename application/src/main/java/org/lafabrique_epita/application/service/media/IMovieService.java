@@ -1,11 +1,14 @@
-package org.lafabrique_epita.domain.repositories;
+package org.lafabrique_epita.application.service.media;
 
 import org.lafabrique_epita.domain.entities.MovieEntity;
 
 import java.util.List;
 
-public interface MovieRepository {
+public interface IMovieService {
     MovieEntity save(MovieEntity movie);
 
-    List<MovieEntity> findAll();
+    List<MovieEntity> getAll();
+
+
+
 }
