@@ -32,5 +32,5 @@ public class PlayListTvEntity {
     private StatusEnum status;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

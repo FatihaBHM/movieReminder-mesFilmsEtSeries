@@ -50,5 +50,5 @@ public class EpisodeEntity {
     private List<CommentEntity> comments;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

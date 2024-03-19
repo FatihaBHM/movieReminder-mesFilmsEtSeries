@@ -22,5 +22,5 @@ public class GenreEntity {
     private String name;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

@@ -19,5 +19,5 @@ public class CountryEntity {
     private String name;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

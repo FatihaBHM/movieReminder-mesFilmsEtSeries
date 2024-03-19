@@ -39,5 +39,5 @@ public class SeasonEntity {
     private List<CommentEntity> comments;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

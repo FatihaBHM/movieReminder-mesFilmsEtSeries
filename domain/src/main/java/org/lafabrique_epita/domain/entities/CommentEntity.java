@@ -21,5 +21,5 @@ public class CommentEntity {
     private float score;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }

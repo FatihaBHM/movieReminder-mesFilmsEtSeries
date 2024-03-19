@@ -30,7 +30,7 @@ public class FavoriteEntity {
     private UserEntity user;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 
 
 

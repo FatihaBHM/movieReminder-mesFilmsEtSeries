@@ -19,6 +19,6 @@ public class LanguageEntity {
     private String name;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 
 }

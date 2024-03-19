@@ -5,10 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.lafabrique_epita.domain.enums.RoleEnum;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -16,6 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "utilisateur")
 public class UserEntity implements UserDetails {
 
@@ -34,7 +40,7 @@ public class UserEntity implements UserDetails {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private RoleEnum role;
+    private RoleEnum role = RoleEnum.USER;
 
     @OneToMany
     @JoinColumn(name = "playlist_tv_id")
@@ -48,8 +54,13 @@ public class UserEntity implements UserDetails {
     @JoinColumn(name = "favorite_id")
     private List<FavoriteEntity> favorites;
 
-    @Embedded
-    private CommonEntity commons;
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime lastModifiedDate;
+
 
 
     // ↓ Configuration de Spring Security (UserDetails) ↓

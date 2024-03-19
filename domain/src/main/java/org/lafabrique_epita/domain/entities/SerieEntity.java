@@ -66,5 +66,5 @@ public class SerieEntity {
     private List<CountryEntity> countries;
 
     @Embedded
-    private CommonEntity commons;
+    private CommonEntity common;
 }
