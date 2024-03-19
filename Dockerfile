@@ -2,8 +2,9 @@ FROM eclipse-temurin:21-jdk-alpine as build
 WORKDIR /workspace/app
 
 COPY . .
+
 RUN chmod +x ./mvnw
-RUN ./mvnw package -DskipTests
+RUN ./mvnw clean package -DskipTests
 
 FROM eclipse-temurin:21-jdk-alpine
 VOLUME /tmp

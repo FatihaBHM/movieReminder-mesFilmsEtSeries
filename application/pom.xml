@@ -9,16 +9,13 @@
     </parent>
 
     <artifactId>application</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>application</name>
-    <description>application</description>
-    <packaging>jar</packaging>
+
     <dependencies>
         <!--Dep des modules ddd-->
         <dependency>
             <groupId>org.lafabrique_epita</groupId>
             <artifactId>domain</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

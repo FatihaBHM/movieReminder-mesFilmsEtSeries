@@ -3,10 +3,12 @@ package org.lafabrique_epita.application.service.media;
 import org.lafabrique_epita.domain.entities.MovieEntity;
 import org.lafabrique_epita.domain.repositories.MovieRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class MovieServiceImpl implements IMovieService {
     private final MovieRepository movieRepository;
 

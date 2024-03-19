@@ -9,21 +9,18 @@
     </parent>
 
     <artifactId>exposition</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>exposition</name>
-    <description>exposition</description>
-    <packaging>jar</packaging>
+
     <dependencies>
         <!--dep modules ddd -->
         <dependency>
             <groupId>org.lafabrique_epita</groupId>
             <artifactId>application</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.lafabrique_epita</groupId>
             <artifactId>infrastructure</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
