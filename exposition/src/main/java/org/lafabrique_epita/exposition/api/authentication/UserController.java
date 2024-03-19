@@ -58,6 +58,7 @@ public class UserController {
             return new ResponseEntity<>(response, HttpStatus.OK);
 //            return ResponseEntity.ok(response);
         }
+        System.out.println("coucou, je suis sam");
         return errors(HttpStatus.UNAUTHORIZED, "Unauthorized");
     }
 
@@ -68,12 +69,7 @@ public class UserController {
             return new ResponseEntity<>(responseBody, status);
 
         }catch (JsonProcessingException e) {
-            String resp = """
-{
-    "status": 400,
-    "errorMessage": "L'utilisateur existe déjà"
-}""";
-            return new ResponseEntity<>(resp, status);
+            return ResponseEntity.internalServerError().build();
         }
     }
 
