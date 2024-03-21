@@ -21,14 +21,8 @@ public class MovieEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMovie;
 
+    @Column(nullable = true)
     private String backdropPath;
-
-    //@Column(nullable = true)
-   // private String image_landscape;
-
-    //@Column(nullable = true)
-    //private String image_portrait;
-
 
     @Column(nullable = false)
     private Long idTmdb;

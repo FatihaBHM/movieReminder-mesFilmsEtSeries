@@ -1,8 +1,7 @@
-package org.lafabrique_epita.exposition.dto;
+package org.lafabrique_epita.exposition.dto.user;
 
 import lombok.RequiredArgsConstructor;
 import org.lafabrique_epita.domain.entities.UserEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @RequiredArgsConstructor
 public class RegisterDtoMapper {
